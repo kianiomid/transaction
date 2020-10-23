@@ -1,0 +1,1 @@
+{{ $item->show_feedback ? 'بله' : 'خیر'}}

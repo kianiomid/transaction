@@ -1,0 +1,77 @@
+{
+
+  "params": {
+      "model": "App\\Models\\UserBalanceLog",
+    "repository": "App\\Repositories\\UserBalanceLogRepository",
+      "customView": "backoffice.simple"
+  },
+
+  "fields": [
+    { "name": "deposit", "label": "label.deposit", "form": {"class": "dir-ltr"} },
+    { "name": "payment", "label": "label.payment", "form": {"class": "dir-ltr"} },
+    { "name": "payment_info1", "label": "label.payment_info1", "form": {"class": "", "type": "text", "validation": ["nullable"] }},
+    { "name": "payment_info2", "label": "label.payment_info2", "form": {"class": "", "type": "text", "validation": ["nullable"] }},
+    { "name": "reason_info1", "label": "label.reason_info1", "form": {"class": "", "type": "text", "validation": ["nullable"] } },
+    { "name": "reason_info2", "label": "label.reason_info2", "form": {"class": "", "type": "text", "validation": ["nullable"] } },
+    { "name": "created_at", "label": "label.created_at" },
+    { "name": "updated_at", "label": "label.updated_at" },
+
+    { "name": "currency_id", "label": "label.currency",
+      "form": {
+        "dataProvider": "AdminSelectCurrency",
+        "placeholder": "label.__select__"
+      },
+      "filter": {
+        "placeholder": ""
+      }
+    },
+    { "name": "currency", "label": "label.currency" },
+
+    {"name": "user_id", "label": "label.user",
+      "form": {
+          "type": "autocomplete",
+          "multiple": false,
+          "dataProvider": "user.autoComplete",
+          "model": "App\\User",
+          "placeholder": "label.__select__"
+      },
+      "filter": {
+          "type": "autocomplete",
+          "placeholder": ""
+      }
+    },
+    {"name": "user", "label": "label.user"}
+  ],
+
+  "form": {
+    "display": ["currency_id", "user_id", "deposit", "payment", "payment_info1", "payment_info2", "reason_info1", "reason_info2"]
+  },
+
+  "filter": {
+    "display": ["currency_id", "user_id", "deposit", "payment", "payment_info1", "payment_info2", "reason_info1", "reason_info2"]
+  },
+
+  "list": {
+    "title": "label.user_balance_log_list",
+    "display": ["currency", "user", "deposit", "payment", "payment_info1", "payment_info2", "reason_info1", "_created_at"]
+  },
+
+  "edit": {
+    "title" : "label.user_balance_log_edit"
+  },
+
+  "new": {
+    "title" : "label.user_balance_log_create"
+  },
+
+  "show": {
+    "title" : "label.user_balance_log_show",
+    "display": ["currency", "user", "deposit", "payment", "payment_info1", "payment_info2", "reason_info1", "reason_info2", "created_at"]
+  },
+
+  "excel": {
+    "display": ["currency", "user", "deposit", "payment", "payment_info1", "payment_info2", "reason_info1", "reason_info2", "created_at"]
+  }
+
+
+}

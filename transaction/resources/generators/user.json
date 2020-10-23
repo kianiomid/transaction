@@ -1,0 +1,76 @@
+{
+  "params": {
+      "model": "App\\User",
+      "repository": "App\\Repositories\\UserRepository",
+      "customView": "backoffice.user"
+  },
+
+  "fields": [
+    { "name": "name", "label": "label.name"},
+    { "name": "fname", "label": "label.first_name"},
+    { "name": "lname", "label": "label.last_name"},
+    { "name": "username", "label": "label.username"},
+    { "name": "email", "label": "label.email",
+      "form":{
+        "class": "dir-ltr",
+        "type": "text",
+        "validation": ["required", "unique:users,email"]
+      },
+      "filter": {
+        "validation": "nullable"
+      }
+    },
+    { "name": "mobile", "label": "label.mobile", "form":{ "class": "dir-ltr", "type": "text"} },
+    { "name": "password", "label": "label.password" },
+    {"name": "email_verified_at", "label": "label.email_verified_at",
+      "form": {
+        "type": "date",
+        "validation": "date"
+      }
+    },
+    { "name": "created_at", "label": "label.create_date" },
+    { "name": "updated_at", "label": "label.update_date" }
+  ],
+
+  "form": {
+    "display": ["fname", "lname", "name", "username", "email", "password"]
+  },
+
+  "filter": {
+    "display": ["fname", "lname", "name", "username", "email", "mobile"]
+  },
+
+  "list": {
+    "title": "label.user_list",
+    "display": ["fname", "lname", "name", "username", "email", "mobile", "created_at"],
+    "objectActions": [
+      { "name": "show", "label": "label.show" },
+      { "name": "edit", "label": "label.edit"},
+      { "name": "delete", "label": "label.delete" }
+    ]
+  },
+
+  "edit": {
+    "title" : "label.user_edit",
+    "display": ["fname", "lname", "name", "username", "email", "mobile"],
+    "actions": [
+      { "name": "list" },
+      { "name": "save" }
+    ]
+  },
+
+  "new": {
+    "title" : "label.user_create",
+    "display": ["fname", "lname", "name", "username", "email", "mobile", "password"]
+  },
+
+  "show": {
+    "title" : "label.user_show",
+    "display": ["fname", "lname", "name", "username", "email", "mobile"]
+  },
+
+  "excel": {
+    "display": ["fname", "lname", "name", "username", "email", "mobile", "created_at", "updated_at"]
+  }
+
+}

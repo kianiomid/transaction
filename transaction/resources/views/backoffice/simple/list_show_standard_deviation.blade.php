@@ -1,0 +1,1 @@
+{{ $item->show_standard_deviation ? 'بله' : 'خیر'}}

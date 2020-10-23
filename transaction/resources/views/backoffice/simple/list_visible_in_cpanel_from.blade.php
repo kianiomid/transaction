@@ -1,0 +1,1 @@
+{{ \App\Helpers\Util::i18n_date2($item->visible_in_cpanel_from, null, false, null, false, false) }}

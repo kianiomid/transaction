@@ -1,0 +1,1 @@
+{{ \App\Services\Util::i18n_date2($item->updated_at, null, false, null, true, false) }}

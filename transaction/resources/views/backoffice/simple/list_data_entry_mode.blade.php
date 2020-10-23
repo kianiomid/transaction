@@ -1,0 +1,1 @@
+{{ $item->data_entry_mode ? 'بله' : 'خیر'}}
