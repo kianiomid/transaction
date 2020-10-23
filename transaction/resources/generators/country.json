@@ -1,0 +1,60 @@
+{
+
+  "params": {
+      "model": "App\\Models\\Country",
+    "repository": "App\\Repositories\\CountryRepository",
+      "customView": "backoffice.simple"
+  },
+
+  "fields": [
+    { "name": "name", "label": "label.name"},
+    { "name": "descriptor", "label": "label.descriptor", "form": {"class": "dir-ltr"}},
+    { "name": "abbreviation", "label": "label.abbreviation", "form": {"class": "dir-ltr"}},
+    { "name": "week_holidays", "label": "label.week_holidays", "form": {"class": "dir-ltr"}},
+    { "name": "default_timezone", "label": "label.default_timezone", "form": {"class": "dir-ltr"}},
+    { "name": "enable", "label": "label.enable", "form": {"defaultValue": 1} },
+
+    { "name": "currency_id", "label": "label.currency",
+      "form": {
+        "dataProvider": "AdminSelectCurrency",
+        "placeholder": "label.__select__"
+      },
+      "filter": {
+        "placeholder": ""
+      }
+    },
+    { "name": "currency", "label": "label.currency" }
+  ],
+
+  "form": {
+    "display": ["currency_id", "name", "descriptor", "abbreviation", "week_holidays", "default_timezone", "enable"]
+  },
+
+  "filter": {
+    "display": ["currency_id", "name", "descriptor", "default_timezone", "enable"]
+  },
+
+  "list": {
+    "title": "label.country_list",
+    "display": ["currency", "name", "descriptor", "abbreviation", "week_holidays", "default_timezone", "_enable"]
+  },
+
+  "edit": {
+    "title" : "label.country_edit"
+  },
+
+  "new": {
+    "title" : "label.country_create"
+  },
+
+  "show": {
+    "title" : "label.country_show",
+    "display": ["currency", "name", "descriptor", "abbreviation", "week_holidays", "default_timezone", "enable"]
+  },
+
+  "excel": {
+    "display": ["currency", "name", "descriptor", "abbreviation", "week_holidays", "default_timezone", "enable"]
+  }
+
+
+}

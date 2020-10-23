@@ -1,0 +1,1 @@
+{{ \App\Http\Controllers\BGenerator\BaseController::$filterGenderConvert[$item->gender] }}

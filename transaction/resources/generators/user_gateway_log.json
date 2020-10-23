@@ -1,0 +1,72 @@
+{
+
+  "params": {
+      "model": "App\\Models\\UserGatewayLog",
+    "repository": "App\\Repositories\\UserGatewayLogRepository",
+      "customView": "backoffice.simple"
+  },
+
+  "fields": [
+    { "name": "price", "label": "label.price", "form": {"class": "dir-ltr"} },
+    { "name": "status_code", "label": "label.status_code", "form": {"class": "dir-ltr"} },
+    { "name": "gateway_result", "label": "label.gateway_result", "form": {"class": "", "type": "text", "validation": ["nullable"] }},
+
+    { "name": "currency_id", "label": "label.currency",
+      "form": {
+        "dataProvider": "AdminSelectCurrency",
+        "placeholder": "label.__select__"
+      },
+      "filter": {
+        "placeholder": ""
+      }
+    },
+    { "name": "currency", "label": "label.currency" },
+
+    {"name": "user_id", "label": "label.user",
+      "form": {
+          "type": "autocomplete",
+          "multiple": false,
+          "dataProvider": "user.autoComplete",
+          "model": "App\\User",
+          "placeholder": "label.__select__"
+      },
+      "filter": {
+          "type": "autocomplete",
+          "placeholder": ""
+      }
+    },
+    {"name": "user", "label": "label.user"}
+  ],
+
+  "form": {
+    "display": ["currency_id", "user_id", "price", "status_code", "gateway_result"]
+  },
+
+  "filter": {
+    "display": ["currency_id", "user_id", "price", "status_code", "gateway_result"]
+  },
+
+  "list": {
+    "title": "label.user_gateway_log_list",
+    "display": ["currency", "user", "price", "status_code", "gateway_result"]
+  },
+
+  "edit": {
+    "title" : "label.user_gateway_log_edit"
+  },
+
+  "new": {
+    "title" : "label.user_gateway_log_create"
+  },
+
+  "show": {
+    "title" : "label.user_gateway_log_show",
+    "display": ["currency", "user", "price", "status_code", "gateway_result"]
+  },
+
+  "excel": {
+    "display": ["currency", "user", "price", "status_code", "gateway_result"]
+  }
+
+
+}

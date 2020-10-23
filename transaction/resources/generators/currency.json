@@ -1,0 +1,47 @@
+{
+
+  "params": {
+      "model": "App\\Models\\Currency",
+    "repository": "App\\Repositories\\CurrencyRepository",
+      "customView": "backoffice.simple"
+  },
+
+  "fields": [
+    { "name": "name", "label": "label.name"},
+    { "name": "descriptor", "label": "label.descriptor", "form": {"class": "dir-ltr"}},
+    { "name": "sign", "label": "label.sign", "form": {"class": "dir-ltr"}},
+    { "name": "enable", "label": "label.enable", "form": {"defaultValue": 1} }
+  ],
+
+  "form": {
+    "display": ["name", "descriptor", "sign", "enable"]
+  },
+
+  "filter": {
+    "display": ["name", "descriptor", "sign", "enable"]
+  },
+
+  "list": {
+    "title": "label.currency_list",
+    "display": ["name", "descriptor", "sign", "_enable"]
+  },
+
+  "edit": {
+    "title" : "label.currency_edit"
+  },
+
+  "new": {
+    "title" : "label.currency_create"
+  },
+
+  "show": {
+    "title" : "label.currency_show",
+    "display": ["name", "descriptor", "sign", "enable"]
+  },
+
+  "excel": {
+    "display": ["name", "descriptor", "sign", "enable"]
+  }
+
+
+}

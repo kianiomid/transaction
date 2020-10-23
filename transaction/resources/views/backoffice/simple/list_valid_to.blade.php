@@ -1,0 +1,1 @@
+{{ \App\Helpers\Util::i18n_date2($item->valid_to, null, false, null, false, false) }}

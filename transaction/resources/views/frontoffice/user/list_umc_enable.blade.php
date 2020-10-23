@@ -1,0 +1,1 @@
+.bool{{ $item->umc_enable }}

@@ -1,0 +1,72 @@
+{
+
+  "params": {
+      "model": "App\\Models\\UserAccountSetting",
+    "repository": "App\\Repositories\\UserAccountSettingRepository",
+      "customView": "backoffice.simple"
+  },
+
+  "fields": [
+    { "name": "account_balance", "label": "label.account_balance", "form": {"class": "dir-ltr"} },
+    { "name": "auto_pay_invoices", "label": "label.auto_pay_invoices", "form": {"defaultValue": 1} },
+    { "name": "default_timezone", "label": "label.default_timezone", "form": {"class": "dir-ltr"}},
+
+    { "name": "country_id", "label": "label.country",
+      "form": {
+          "dataProvider": "AdminSelectCountry",
+          "placeholder": "label.__select__"
+      },
+      "filter": {
+          "placeholder": ""
+      }
+    },
+    { "name": "country", "label": "label.country" },
+
+    {"name": "user_id", "label": "label.user",
+      "form": {
+          "type": "autocomplete",
+          "multiple": false,
+          "dataProvider": "user.autoComplete",
+          "model": "App\\User",
+          "placeholder": "label.__select__"
+      },
+      "filter": {
+          "type": "autocomplete",
+          "placeholder": ""
+      }
+    },
+    {"name": "user", "label": "label.user"}
+  ],
+
+  "form": {
+    "display": ["user_id", "country_id", "account_balance", "auto_pay_invoices", "default_timezone"]
+  },
+
+  "filter": {
+    "display": ["user_id", "country_id", "account_balance", "auto_pay_invoices", "default_timezone"]
+  },
+
+  "list": {
+    "title": "label.user_account_setting_list",
+    "display": ["user", "country", "account_balance", "_auto_pay_invoices", "default_timezone"]
+  },
+
+  "edit": {
+    "title" : "label.user_account_setting_edit"
+  },
+
+  "new": {
+    "title" : "label.user_account_setting_create"
+  },
+
+  "show": {
+    "title" : "label.user_account_setting_show",
+    "display": ["user", "country", "account_balance", "auto_pay_invoices", "default_timezone"]
+  },
+
+  "excel": {
+    "display": ["user", "country", "account_balance", "auto_pay_invoices", "default_timezone"]
+  }
+
+
+}

@@ -1,0 +1,1 @@
+{{ $item->show_coworker ? 'بله' : 'خیر'}}

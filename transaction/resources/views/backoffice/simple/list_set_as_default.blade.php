@@ -1,0 +1,1 @@
+{{ $item->set_as_default ? 'بله' : 'خیر'}}

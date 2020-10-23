@@ -1,0 +1,1 @@
+{{ $item->show_activity_to_sibling ? 'بله' : 'خیر'}}
